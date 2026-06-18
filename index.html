@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Мария Мастеркова | Методист · AI · Экс-тимлид Skyeng · B2B</title>
+  <meta name="description" content="Портфолио методиста. Разработка курсов, AI в образовании, B2B-опыт.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* === 🎨 НОВАЯ ПАЛИТРА: ИНДИГО (база + один акцент) + коричный акцент === */
+    :root {
+      --white: #FFFFFF;
+      --bg-page: #F9FAFB;
+      --bg-section: #E0E7FF;
+      --text-main: #111827;
+      --text-sec: #4B5563;
+      --primary: #4338CA;
+      --primary-hover: #3730A3;
+      --border: #E2E8F0;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.1);
+      --shadow-hover: 0 8px 20px rgba(67, 56, 202, 0.12);
+      --radius: 16px;
+      --container: 1200px;
+      --cinnamon: #B87B5A;
+    }
+
+    /* Тёмная тема — только для больших экранов (компьютеры) */
+    @media (prefers-color-scheme: dark) and (min-width: 969px) {
+      :root {
+        --white: #111827;
+        --bg-page: #0F172A;
+        --bg-section: #1E293B;
+        --text-main: #F9FAFB;
+        --text-sec: #9CA3AF;
+        --primary: #818CF8;
+        --primary-hover: #6366F1;
+        --border: #334155;
+        --cinnamon: #C48B6B;
+      }
+    }
+
+    /* === БАЗА === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* === HERO === */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, #FFFFFF 0%, #E0E7FF 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(67, 56, 202, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      flex: 1 0 auto;
+      transform: translateY(-20px);
+    }
+    .hero-photo {
+      width: 100%;
+      max-width: 350px;
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-sec);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .hero-tagline {
+      font-size: 1rem;
+      color: var(--text-main);
+      margin-bottom: 28px;
+      line-height: 1.5;
+      max-width: 90%;
+      border-left: 3px solid var(--primary);
+      padding-left: 16px;
+      font-weight: 400;
+    }
+    .hero-contacts {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 50px;
+      background: var(--white);
+      border: 2px solid var(--border);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      color: var(--text-main);
+      text-decoration: none;
+      box-shadow: var(--shadow);
+    }
+    .btn-pill:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      color: var(--primary);
+    }
+    .btn-pill-static {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 50px;
+      background: var(--white);
+      border: 2px solid var(--border);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+      box-shadow: var(--shadow);
+      cursor: default;
+    }
+
+    /* === NAV === */
+    .hero-nav {
+      width: 100%;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(12px);
+      border-top: 2px solid var(--border);
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.04);
+      position: relative;
+      z-index: 2;
+    }
+    @media (prefers-color-scheme: dark) and (min-width: 969px) { 
+      .hero-nav { background: rgba(17,24,39,0.98); } 
+    }
+    .hero-nav ul {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 16px 40px;
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero-nav a {
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 8px 16px;
+      position: relative;
+      color: var(--text-sec);
+      text-decoration: none;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    .hero-nav a.active, .hero-nav a:hover { 
+      color: var(--primary);
+      background: var(--bg-section);
+    }
+    .hero-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+      border-radius: 4px;
+    }
+    .hero-nav a.active::after { width: 70%; }
+
+    /* === СЕКЦИИ === */
+    #about, #skills, #cases, #contact { background: var(--bg-section); }
+    #about { padding: 100px 0; }
+    #about .section-container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 40px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .about-content {
+      background: var(--white);
+      padding: 48px 48px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .intro-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-sec);
+      margin-bottom: 48px;
+    }
+    .voice-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    .voice-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .voice-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+    .voice-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+    }
+    .voice-subtitle {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+    .voice-desc {
+      font-size: 0.95rem;
+      color: var(--text-sec);
+      margin-bottom: 20px;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .voice-facts {
+      list-style: none;
+      padding: 0;
+      margin-top: auto;
+    }
+    .voice-facts li {
+      font-size: 0.85rem;
+      padding: 6px 0 6px 24px;
+      position: relative;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+    .voice-facts li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      font-size: 0.9rem;
+      color: var(--cinnamon);
+    }
+    .voice-facts li .highlight-number {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .what-i-bring {
+      background: var(--bg-section);
+      padding: 32px 28px;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+    .what-i-bring p {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+    .bring-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .bring-list li {
+      font-size: 0.95rem;
+      color: var(--text-sec);
+      line-height: 1.5;
+      padding-left: 28px;
+      position: relative;
+    }
+    .bring-list li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--cinnamon);
+      font-weight: 700;
+    }
+    .bring-list li .highlight-number { font-weight: 600; }
+
+    /* === НАВЫКИ === */
+    .skills-grid { display: flex; flex-direction: column; gap: 32px; }
+    .skill-category-box {
+      background: var(--white);
+      padding: 28px 32px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+    }
+    .skill-category-box:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+    .skill-category-box h4 {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .skill-tag {
+      padding: 8px 18px;
+      border-radius: 60px;
+      background: var(--white);
+      border: 2px solid var(--border);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      color: var(--text-main);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .skill-tag:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      background: rgba(67, 56, 202, 0.05);
+    }
+    .skill-tag.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* === ФИЛЬТРЫ === */
+    .filters-wrapper { margin-bottom: 32px; }
+    .filter-group { margin-bottom: 28px; }
+    .filter-group-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .filter-buttons-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-preview-btn {
+      padding: 8px 18px;
+      border: 2px solid var(--border);
+      border-radius: 50px;
+      background: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      color: var(--text-sec);
+      cursor: pointer;
+      opacity: 0.9;
+    }
+    .filter-preview-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .filter-preview-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      opacity: 1;
+    }
+
+    /* === КЕЙСЫ === */
+    .section-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    #cases { padding: 100px 0; }
+    .cases-intro {
+      font-size: 1rem;
+      color: var(--text-sec);
+      margin-bottom: 20px;
+      padding: 16px 24px;
+      background: var(--white);
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 28px;
+    }
+    .flip-card {
+      background-color: transparent;
+      width: 100%;
+      perspective: 1200px;
+      cursor: pointer;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: auto;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+      box-shadow: var(--shadow-hover);
+    }
+    .flip-card-front, .flip-card-back {
+      grid-area: 1 / 1 / 2 / 2;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+    }
+    .flip-card-front {
+      background: var(--white);
+      z-index: 2;
+      border: 1px solid var(--primary);
+    }
+    .flip-card-back {
+      transform: rotateY(180deg);
+      background: var(--white);
+      border-color: var(--border);
+    }
+    .flip-card-back.esg-back { padding: 20px 22px; }
+    .flip-card-back.esg-back .methods-list { margin-bottom: 6px !important; }
+    .flip-card-back.esg-back .button-group { margin: 6px 0 6px !important; }
+    .flip-card-back.esg-back .quote-block { margin-top: 8px !important; padding: 8px 12px !important; }
+    .flip-card-back.esg-back .back-note { margin-top: 8px !important; }
+    .case-format-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      background: var(--bg-section);
+      color: var(--primary);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+    .case-title {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      line-height: 1.3;
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    .case-audience {
+      font-size: 0.9rem;
+      color: var(--text-sec);
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+    .case-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+    .feature-list, .methods-list { list-style: none; margin: 12px 0; }
+    .feature-list li {
+      font-size: 0.9rem;
+      padding: 6px 0 6px 0;
+      position: relative;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+    .feature-list li:not(:first-child) {
+      padding-left: 20px;
+    }
+    .feature-list li:not(:first-child)::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      color: var(--cinnamon);
+      font-size: 1rem;
+    }
+    .feature-list li:first-child::before { content: none; }
+    .methods-list li {
+      font-size: 0.88rem;
+      padding: 6px 0 6px 16px;
+      position: relative;
+      color: var(--text-main);
+      line-height: 1.5;
+      border-left: 3px solid var(--primary);
+      margin-left: 4px;
+    }
+    .case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: var(--primary);
+      color: white;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      margin-top: auto;
+      text-decoration: none;
+      width: fit-content;
+    }
+    .case-link:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(67, 56, 202, 0.3);
+    }
+    .back-note {
+      font-size: 0.9rem;
+      color: var(--text-sec);
+      line-height: 1.6;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 2px dashed var(--border);
+    }
+    .quote-block {
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: var(--bg-section);
+      border-left: 4px solid var(--primary);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      border-radius: 8px;
+    }
+    .button-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 16px 0 12px;
+    }
+    .small-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .small-btn:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* === ОБРАЗОВАНИЕ === */
+    #education {
+      padding: 100px 0;
+      background: var(--bg-page);
+    }
+    .edu-list {
+      list-style: none;
+      position: relative;
+      padding-left: 32px;
+    }
+    .edu-list::before {
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--primary), var(--primary));
+      border-radius: 4px;
+    }
+    .edu-list li {
+      padding: 20px 0 20px 28px;
+      position: relative;
+      background: var(--white);
+      margin-bottom: 16px;
+      padding: 24px 24px 24px 60px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+    }
+    .edu-list li:hover {
+      transform: translateX(8px);
+      box-shadow: var(--shadow-hover);
+    }
+    .edu-list li::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 28px;
+      width: 16px;
+      height: 16px;
+      background: var(--primary);
+      border: 3px solid var(--white);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px var(--primary);
+    }
+    .edu-list strong { color: var(--primary); font-weight: 700; }
+
+    /* === КОНТАКТЫ === */
+    #contact { padding: 120px 0; }
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .contact-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: var(--text-main);
+    }
+    .contact-text {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text-sec);
+      margin-bottom: 32px;
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .contact-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      background: var(--white);
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+    .contact-link-btn:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      border-color: var(--primary);
+    }
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      background: var(--white);
+      color: var(--text-sec);
+      border: 1px solid var(--border);
+      cursor: default;
+    }
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow);
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 40px 0;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    /* === МОБИЛЬНЫЕ ПРАВКИ: принудительно светлая тема + аккуратные отступы и размеры === */
+    @media (max-width: 968px) {
+      :root {
+        --white: #FFFFFF;
+        --bg-page: #F9FAFB;
+        --bg-section: #E0E7FF;
+        --text-main: #111827;
+        --text-sec: #4B5563;
+        --primary: #4338CA;
+        --primary-hover: #3730A3;
+        --border: #E2E8F0;
+        --cinnamon: #B87B5A;
+      }
+      .hero {
+        background: linear-gradient(135deg, #FFFFFF 0%, #E0E7FF 100%) !important;
+      }
+      .hero-nav {
+        background: rgba(255,255,255,0.98) !important;
+      }
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 12px;            /* уменьшили разрыв между фото и текстом */
+        transform: translateY(0);
+        padding: 12px 20px 0;  /* уменьшили верхний отступ */
+      }
+      .hero-photo {
+        max-width: 220px;
+        margin: 0 auto;
+      }
+      /* Увеличили шрифты, но компактно */
+      .hero-content h1 {
+        font-size: clamp(2rem, 5vw, 2.4rem);
+        margin-bottom: 6px;
+      }
+      .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      .hero-tagline {
+        max-width: 100%;
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+        font-size: 0.85rem;
+        line-height: 1.35;
+        margin-bottom: 14px;
+      }
+      .hero-contacts { justify-content: center; }
+      /* Навигация — без изменений, чтобы влезала */
+      .hero-nav ul {
+        padding: 10px 12px;
+        gap: 8px;
+      }
+      .hero-nav a {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+      }
+      .cases-grid { grid-template-columns: 1fr; }
+      .flip-card { height: auto; }
+      .flip-card-inner { transform: none !important; height: auto; display: block; }
+      .flip-card-front, .flip-card-back {
+        position: relative;
+        transform: none !important;
+        backface-visibility: visible;
+        height: auto;
+        grid-area: auto;
+      }
+      .flip-card-back { margin-top: 16px; border-top: 3px dashed var(--border); }
+      .about-content { padding: 32px 24px; }
+      .voice-cards { grid-template-columns: 1fr; gap: 20px; }
+      .voice-card { padding: 20px; }
+      .skill-tag { white-space: normal; }
+      .contact-container { padding: 32px 24px; }
+    }
+    @media (max-width: 640px) {
+      .hero-container {
+        padding: 8px 16px 0;
+        gap: 10px;
+      }
+      .hero-photo { max-width: 180px; }
+      .hero-content h1 {
+        font-size: clamp(1.8rem, 6vw, 2.2rem);
+        margin-bottom: 5px;
+      }
+      .hero-subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+      }
+      .hero-tagline {
+        font-size: 0.75rem;
+        margin-bottom: 12px;
+      }
+      .hero-nav ul {
+        padding: 8px 8px;
+        gap: 6px;
+      }
+      .hero-nav a {
+        font-size: 0.65rem;
+        padding: 4px 6px;
+      }
+      .section-container { padding: 0 20px; }
+      #about .section-container { padding: 0 20px; }
+      .skill-category-box { padding: 24px 20px; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .hero-contacts .btn-pill,
+      .hero-contacts .btn-pill-static { padding: 5px 10px; font-size: 0.75rem; }
+      .intro-text { font-size: 1rem; }
+      .voice-title { font-size: 1.3rem; }
+      .skill-tag { font-size: 0.8rem; padding: 6px 14px; }
+      .filter-buttons-group { gap: 8px; }
+      .filter-preview-btn { font-size: 0.75rem; padding: 6px 14px; }
+      .contact-container { padding: 28px 20px; }
+      .contact-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-photo">
+        <img src="photo_4.jpg" alt="Мария Мастеркова — методист">
+      </div>
+      <div class="hero-content">
+        <h1>Мария Мастеркова</h1>
+        <p class="hero-subtitle">Методист · AI в образовании | Экс-тимлид в Skyeng · Клиентский менеджмент (B2B)</p>
+        <p class="hero-tagline">Проектирую обучение, где глубина смыслов встречается с бизнес-метриками. Соединяю эмпатию, методику и данные, чтобы создавать измеримые продукты, которые работают на людей и на бизнес.</p>
+        <div class="hero-contacts">
+          <span class="btn-pill-static">📧 masterkova.m.m@gmail.com</span>
+          <a href="https://t.me/masterkova_mm" target="_blank" rel="noopener noreferrer" class="btn-pill">📱 Telegram</a>
+          <a href="https://www.linkedin.com/in/maria-masterkova" target="_blank" rel="noopener noreferrer" class="btn-pill">🔗 LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-nav">
+      <ul>
+        <li><a href="#about" class="active">О себе</a></li>
+        <li><a href="#skills">Навыки</a></li>
+        <li><a href="#cases">Кейсы</a></li>
+        <li><a href="#education">Обучение</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <main>
+    <section id="about">
+      <div class="section-container">
+        <h2 class="section-title">О себе</h2>
+        <div class="about-content">
+          <div class="intro-text">
+            Я создаю образовательные продукты на стыке методики, эмпатии и данных. <br><br>
+            Мой подход — это структурированная эмпатия: умение слышать людей (студентов, клиентов, преподавателей) и превращать это в чёткие образовательные системы — тогда забота о людях приводит к росту метрик, а не мешает им.
+          </div>
+
+          <div class="voice-cards">
+            <div class="voice-card">
+              <div class="voice-title">📊 Голос Менеджера</div>
+              <div class="voice-subtitle">Думаю о бизнесе и цифрах</div>
+              <div class="voice-desc">Обучение должно решать задачи компании и приносить измеримый результат.</div>
+              <ul class="voice-facts">
+                <li>Выводила команду в Топ-3 по KPI в Skyeng</li>
+                <li>100% удержание 10+ B2B-клиентов (BMW, Novartis, JPMorgan)</li>
+                <li>Вела проект по автоматизации учета отпусков: связка Redash + Google Sheets, сокращение ручной обработки заявок</li>
+              </ul>
+            </div>
+            <div class="voice-card">
+              <div class="voice-title">🤝 Голос Тимлида</div>
+              <div class="voice-subtitle">Думаю о людях и процессах</div>
+              <div class="voice-desc">Система должна работать на команду, а не ломать ее. Эмпатия — это инструмент и помощник.</div>
+              <ul class="voice-facts">
+                <li>Управление 5 менеджерами (зона ответственности — 500+ преподавателей)</li>
+                <li>Развитие команды через PDP: внедрила индивидуальные планы, повысив самостоятельность и снизив операционные ошибки</li>
+                <li>Внедрение командных дашбордов в Tableau, освобождение ресурса менеджеров от рутины</li>
+              </ul>
+            </div>
+            <div class="voice-card">
+              <div class="voice-title">🧠 Голос Методиста</div>
+              <div class="voice-subtitle">Думаю о смыслах и студенте</div>
+              <div class="voice-desc">Курс должен менять жизнь, а не просто давать информацию. Глубина + Релевантность + Практика = Завершаемость и применение</div>
+              <ul class="voice-facts">
+                <li>Переквалификация в методологии (Skillbox, 6 курсов) + AI/вайбкодинг (LXD Hero)</li>
+                <li>Разработала 6 программ с нуля (в т.ч. ESG-курс для VK) и внедрила нейросети в анализ ЦА и генерацию контента</li>
+                <li>Самостоятельно собрала интерактивное портфолио на GitHub, применив навыки no-code разработки</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="what-i-bring">
+            <p>Что я приношу в команду:</p>
+            <ul class="bring-list">
+              <li>Системность и метрики: выводила команду в Топ-3 по KPI, участвовала в автоматизации отчетности (Tableau/Redash).</li>
+              <li>Эмпатию, встроенную в процессы: превращаю заботу в инструменты (PDP, коучинг, 100% удержание корпоративных клиентов).</li>
+              <li>Глубину смыслов + AI-инструменты: 5 курсов с нуля (ADDIE, Таксономия Блума), где теория сразу работает на практику и вовлечение.</li>
+              <li>Мышление на стыке: смотрю на задачу через три линзы — метрики → люди → смыслы.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-container">
+        <h2 class="section-title">Мои ключевые навыки</h2>
+        <div class="skills-grid">
+          <div class="skill-category-box">
+            <h4>МЕТОДОЛОГИЯ</h4>
+            <div class="skill-tags">
+              <span class="skill-tag" data-filter="addie">ADDIE / SAM</span>
+              <span class="skill-tag" data-filter="bloom">Таксономия Блума</span>
+              <span class="skill-tag" data-filter="scrum">SCRUM</span>
+              <span class="skill-tag" data-filter="outcome">Проектирование от результата</span>
+            </div>
+          </div>
+          <div class="skill-category-box">
+            <h4>ТЕХНИКИ / ПОДХОДЫ</h4>
+            <div class="skill-tags">
+              <span class="skill-tag" data-filter="spiral">Спиральная логика</span>
+              <span class="skill-tag" data-filter="ssdl">SSDL</span>
+              <span class="skill-tag" data-filter="cognitive">Когнитивизм / Конструктивизм</span>
+              <span class="skill-tag" data-filter="star">STAR / PDP</span>
+              <span class="skill-tag" data-filter="interval">Интервальные повторения</span>
+              <span class="skill-tag" data-filter="gamification">Геймификация</span>
+              <span class="skill-tag" data-filter="empathy">Карта эмпатии</span>
+            </div>
+          </div>
+          <div class="skill-category-box">
+            <h4>ИНСТРУМЕНТЫ / ПЛАТФОРМЫ</h4>
+            <div class="skill-tags">
+              <span class="skill-tag" data-filter="gc">GetCourse</span>
+              <span class="skill-tag" data-filter="tableau">Tableau</span>
+              <span class="skill-tag" data-filter="notion">Notion</span>
+              <span class="skill-tag" data-filter="trainers">Интерактивные тренажеры</span>
+              <span class="skill-tag" data-filter="metrics">Оценивание / Аналитика</span>
+            </div>
+          </div>
+          <div class="skill-category-box">
+            <h4>AI / ТЕХНОЛОГИИ</h4>
+            <div class="skill-tags">
+              <span class="skill-tag" data-filter="ai_chatgpt">ChatGPT</span>
+              <span class="skill-tag" data-filter="ai_perplexity">Perplexity</span>
+              <span class="skill-tag" data-filter="ai_kandinsky">Kandinsky</span>
+              <span class="skill-tag" data-filter="vibecoding">Вайбкодинг</span>
+              <span class="skill-tag" data-filter="prompt">Промпт-инжиниринг</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="section-container">
+        <h2 class="section-title">Кейсы</h2>
+        <p class="cases-intro">🎛️ Выберите фильтр, чтобы увидеть подходящие проекты.</p>
+        
+        <div class="filters-wrapper">
+          <div class="filter-group">
+            <div class="filter-group-title">📂 Тематика курсов</div>
+            <div class="filter-buttons-group">
+              <button class="filter-preview-btn" data-filter-type="topic" data-filter-value="sales">Продажи</button>
+              <button class="filter-preview-btn" data-filter-type="topic" data-filter-value="service">Клиентский сервис</button>
+              <button class="filter-preview-btn" data-filter-type="topic" data-filter-value="hr">HR и управление</button>
+              <button class="filter-preview-btn" data-filter-type="topic" data-filter-value="soft">Психология / Soft Skills</button>
+              <button class="filter-preview-btn" data-filter-type="topic" data-filter-value="culture">Корпоративная культура</button>
+              <button class="filter-preview-btn" data-filter-type="topic" data-filter-value="marketing">Маркетинг</button>
+            </div>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group-title">🎬 Формат / Механики</div>
+            <div class="filter-buttons-group">
+              <button class="filter-preview-btn" data-filter-type="format" data-filter-value="blended">Смешанный формат</button>
+              <button class="filter-preview-btn" data-filter-type="format" data-filter-value="async">Асинхронный</button>
+              <button class="filter-preview-btn" data-filter-type="format" data-filter-value="intensive">Интенсив / Буткемп</button>
+              <button class="filter-preview-btn" data-filter-type="format" data-filter-value="interactive">Интерактив</button>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-bottom: 24px; color: var(--text-sec); font-size: 0.95rem;">Наведите на карточку, чтобы перевернуть и увидеть методические детали ↓</p>
+        <div class="cases-grid" id="cases-grid"></div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-container">
+        <h2 class="section-title">Ключевое образование & сертификаты</h2>
+        <ul class="edu-list">
+          <li><strong>Московский городской педагогический университет (МГПУ)</strong><br>Институт иностранных языков, специалист (английский язык).</li>
+          <li><strong>Skillbox: «Методист с 0 до PRO» (2024-2025)</strong><br>Профессиональная переподготовка (6 курсов).<br>Полный цикл: от анализа ЦА и педагогического дизайна до метрик и LMS, продюсирование.</li>
+          <li><strong>LXD Hero: «Нейрогерой образования» (6 недель, 2025)</strong><br>Специализация по внедрению AI в образовательные процессы.<br>🛠 Освоенный стек (подтверждено сертификатом):<br>LLM (ChatGPT, Claude, DeepSeek), Генерация изображений (Midjourney, Kandinsky), Видео (HeyGen), Презентации (Gamma, Tome).</li>
+          <li><strong>LXD Hero: «Вайбоград» (вайбкодинг, 2026)</strong><br>No-code разработка образовательных прототипов и интерактивных портфолио.<br>🛠 Результат: самостоятельно собрала портфолио на GitHub с применением AI-инструментов.</li>
+          <li><strong>Zerocoder (стажировка)</strong><br>Исследование 20+ AI-инструментов, аудит курсов, создание ТЗ, сборка уроков.<br>💬 Рекомендация руководителя направления:<br><i>«Мария продемонстрировала высокий уровень профессионализма... Грамотно структурирует информацию, быстро адаптируется и проактивно подходит к задачам.»<br>— Екатерина Ведяшкина, Zerocoder</i></li>
+          <li><strong>Инструменты:</strong> GetCourse, Tableau/Redash, Miro, Jira, Canva, Zoom, Slack<br><strong>Языки:</strong> английский (B2), корейский (A2)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-container">
+        <div class="contact-container">
+          <div class="contact-title">Будем на связи</div>
+          <div class="contact-text">
+            Спасибо, что дочитали до конца.<br><br>
+            Если мой подход или проекты показались интересными, буду рада познакомиться.<br>
+            Открыта к full-time в EdTech и корпоративном обучении, проектной работе, а также к консультациям и профессиональному обмену опытом.<br><br>
+            Напишите — обсудим, какой формат будет удобнее.
+          </div>
+          <div class="contact-links">
+            <a href="https://t.me/masterkova_mm" target="_blank" rel="noopener noreferrer" class="contact-link-btn">📩 Telegram</a>
+            <span class="contact-email">📧 masterkova.m.m@gmail.com</span>
+          </div>
+          <div class="action-buttons">
+            <a href="Maria_Masterkova_Resume.pdf" download class="btn-primary">📄 Скачать резюме (PDF)</a>
+            <a href="https://www.linkedin.com/in/maria-masterkova" target="_blank" rel="noopener noreferrer" class="btn-secondary">🔗 LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-container">
+      <p style="margin-top: 24px; color: var(--text-sec);">© 2026 Мария Мастеркова — Портфолио методиста</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const casesData = [
+        { id: 0, 
+          title: "📌 ESG-курс «Сеть влияния» для сотрудников VK", 
+          audience: "👥 <strong>ЦА:</strong> 15 000+ сотрудников VK (от IT до HR) | ⏱️ ~90 минут (5 модулей)", 
+          desc: "💼 <strong>Бизнес-задача:</strong> Повысить лояльность к ESG-инициативам VK, чтобы каждый сотрудник понял свой вклад в устойчивое развитие и начал применять ESG-принципы в работе.", 
+          features: [
+            "🧩 <strong>Что внутри:</strong>",
+            "Интерактивная карта «живой сети»: сотрудник исследует курс в своем порядке, активируя узлы по темам E/S/G",
+            "Персонализация под роль (IT, HR, Marketing, Operations): релевантные кейсы и чек-листы для каждой роли",
+            "Геймификация через «силу сигнала» и симулятор «Сетевого эффекта»: сотрудник видит, как его действия влияют на компанию (например, «100 разработчиков оптимизируют код → экономия ~150 МВт·ч/год»)"
+          ], 
+          result: "📈 <strong>Ожидаемый результат:</strong> рост лояльности к ESG-инициативам компании и готовность применять ESG-принципы в работе (расчётная гипотеза на основе исследований, качественные программы обучения напрямую влияют на лояльность, удержание и вовлечённость персонала).",
+          quote: "💬 «Вы предложили полноценную образовательную экосистему с сильной креативной концепцией, продуманной геймификацией и адаптацией под разные роли сотрудников VK. У вас удачно реализована метафора \"живой сети\", которая связывает все модули курса и делает обучение целостным и запоминающимся.»<br>— Егор Глуховченко, специалист VK, куратор проекта",
+          methodsList: ["Андрагогика", "Таксономия Блума", "Микрообучение", "Геймификация", "Оценка по Киркпатрику", "Персонализация"],
+          sheetLink: "https://docs.google.com/spreadsheets/d/1GTMfjv5KBh8kDBzGF32NihQM7gQPlH8sltCu-d03zrk/edit?gid=0#gid=0",
+          presLink: "https://drive.google.com/file/d/1VS8DvCkfG5AVITzBHdYl9MeY4ZhmqUY6/view",
+          bottomNote: "Проект выполнен по заданию VK Education. Получен сертификат и положительный отзыв от представителя VK."
+        },
+        { id: 1,
+          title: "📌 Эмоциональный интеллект: жить без срывов",
+          audience: "👥 <strong>ЦА:</strong> работающие, родители, люди в стрессе | ⏱️ 1 месяц",
+          desc: "💼 <strong>Бизнес-задача:</strong> Повысить психологическую грамотность через бесплатный курс → снять барьеры перед терапией и привлечь клиентов в сервис.",
+          features: [
+            "🧩 <strong>Что внутри:</strong>",
+            "Метафора «Сад внутри» — бережный подход без осуждения",
+            "4 варианты ДЗ под разные сегменты (работа, семья, саморазвитие, стресс)",
+            "Персонаж Лея + аудио-поддержка и дневник эмоций"
+          ],
+          result: "📈 <strong>Ожидаемый результат:</strong> повышение психологической грамотности и рост доверия к услугам (расчётная гипотеза на основе внедрения EQ-тренинга; согласно исследованиям, качественные EQ-программы повышают продуктивность, снижают текучесть и положительно влияют на конверсию в сервисах).",
+          methodsList: [
+            "ADDIE / SAM", "Таксономия Блума (уровни: понимание, применение, анализ)",
+            "Геймификация (карточки «миф/реальность», тест «найди чувство»)",
+            "SSDL (адаптация поддержки от зависимого к вовлеченному этапу)",
+            "Карта эмпатии (сегментация 4 групп ЦА)",
+            "Метрики обучения (CR, CSAT, конверсия по модулям, Retention)",
+            "Проектирование от результата (образовательные результаты в начале каждого модуля)"
+          ],
+          sheetLink: "https://docs.google.com/spreadsheets/d/1K6sqNq0G3zzTaJNL1JGo5Zn2ZSGMZ9ti/edit?clckid=21c19d8d&gid=589954048#gid=589954048",
+          bottomNote: "Курс спроектирован для бесплатного асинхронного формата без кураторов. Основной упор на саморефлексию и практические инструменты, которые студент может применять сразу после урока."
+        },
+        { id: 2,
+          title: "📌 Продажи: от контакта до сделки",
+          audience: "👥 <strong>ЦА:</strong> сотрудники 20-45 лет (новички, опытные, владельцы) | ⏱️ до 3 месяцев",
+          desc: "💼 <strong>Бизнес-задача:</strong> Повысить эффективность продаж через навыки установления контакта, выявления потребностей и работы с возражениями → рост конверсии и снижение оттока.",
+          features: [
+            "🧩 <strong>Что внутри:</strong>",
+            "Спиральная логика: от простых техник к «холодным» продажам",
+            "Воркшопы в парах, ролевые игры, тренажеры + чат с экспертами",
+            "Практика на реальных кейсах студентов из их рабочей практики"
+          ],
+          result: "📈 <strong>Ожидаемый результат:</strong> сокращение времени входа в должность и рост конверсии продаж (расчётная гипотеза на основе внедрения ролевых игр и структурированного коучинга; согласно исследованиям, это может ускорить выход на показатели и повысить закрытие сделок на 20-30%).",
+          methodsList: [
+            "Проектирование от результата",
+            "Спиральная логика (от простых тем к сложным: типы клиентов → техники продаж → переговоры → возражения → отказы → холодные продажи)",
+            "STAR / PDP (структурированные интервью и планы развития)",
+            "Таксономия Блума (уровни: понимание, использование, синтез)",
+            "SSDL (адаптация поддержки: зависимый → заинтересованный → вовлеченный)",
+            "Метрики обучения (CR, CSAT, конверсия по модулям, количество итераций ДЗ, Transformation Rate)"
+          ],
+          sheetLink: "https://docs.google.com/spreadsheets/d/12k7k4fsH_z4xsA1yq9mccvP9f973B70h/edit?clckid=567fc854&gid=589954048#gid=589954048",
+          bottomNote: "Курс спроектирован для работающих специалистов с ограничением 7–8 часов в неделю. Основной упор на практику: более 50% времени тренажеры, кейсы, ролевые игры. Сквозное задание «30 секунд на убеждение» фиксирует личный прогресс каждого студента."
+        },
+        { id: 3,
+          title: "📌 Поддержка: оставаться собой в стрессе",
+          audience: "👥 <strong>ЦА:</strong> операторы поддержки провайдера (стресс, жалобы) | ⏱️ 7 модулей × 10-20 мин",
+          desc: "💼 <strong>Бизнес-задача:</strong> Снизить выгорание и повысить качество обслуживания через «живое» общение в рамках скрипта → рост CSI на 0.2-0.5 и сокращение эскалаций на 10-15%.",
+          features: [
+            "🧩 <strong>Что внутри:</strong>",
+            "Симулятор звонка с агрессивным клиентом — безопасная практика",
+            "Конструктор фраз «Собери фразу»: учиемся говорить тепло",
+            "Приемы активного слушания и «эмоциональной паузы»"
+          ],
+          result: "📈 <strong>Ожидаемый результат:</strong> повышение уверенности операторов при общении со сложными клиентами и рост удовлетворённости клиентов (расчётная гипотеза на основе внедрения тренажёров и обучения эмпатии; согласно исследованиям, это снижает эскалации на 15-30% и повышает CSAT на 20-30%).",
+          methodsList: [
+            "Когнитивизм / Конструктивизм (активное конструирование знаний через тренажеры)",
+            "Геймификация (значки, карта прогресса, топ‑5 фраз)",
+            "Интерактивные тренажеры (симулятор звонка, конструктор фраз)",
+            "Таксономия Блума (уровни: понимание, применение, анализ в тестах и кейсах)",
+            "Метрики обучения (CSI, снижение эскалаций, уверенность операторов)"
+          ],
+          sheetLink: "https://docs.google.com/spreadsheets/d/15x6pnpMBaH3N8mJaeRBt-uBU4tX8L3BGwhKXBGf4B9Y/edit?clckid=e5947ecd&gid=415496992#gid=415496992",
+          bottomNote: "Курс спроектирован по результатам глубинных интервью с операторами (страх отойти от скрипта, выгорание, неуверенность). Основной упор на практику: более 60% времени интерактивные тренажеры, ролевые игры и реальные кейсы."
+        },
+        { id: 4,
+          title: "📌 Найм: находить «своих» и расставаться без боли",
+          audience: "👥 <strong>ЦА:</strong> нанимающие менеджеры без опыта | ⏱️ 8 часов",
+          desc: "💼 <strong>Бизнес-задача:</strong> Научить нанимать подходящих и корректно увольнять → снизить текучесть и построить эффективную команду.",
+          features: [
+            "🧩 <strong>Что внутри:</strong>",
+            "Два подхода: когнитивизм (алгоритмы) и конструктивизм (практика через опыт)",
+            "Портрет кандидата, тестовые задания, STAR-интервью, скрипты увольнения",
+            "Ролевые игры: отработка сложных разговоров в безопасной среде"
+          ],
+          result: "📈 <strong>Ожидаемый результат:</strong> сокращение времени выхода нового сотрудника на полную продуктивность (расчётная гипотеза на основе внедрения структурированного онбординга; согласно исследованиям, это может ускорить время выхода на продуктивность до 50% и сократить время достижения мастерства).",
+          methodsList: [
+            "Когнитивизм / Конструктивизм (два варианта подхода к одному курсу)",
+            "Управление когнитивной нагрузкой (дозирование теории, пошаговое усложнение)",
+            "Интервальные повторения (для закрепления алгоритмов и фраз)",
+            "Проектирование от результата (каждый модуль ведет к итоговому гайду)",
+            "STAR / PDP (структура интервью и развития)",
+            "Таксономия Блума (от понимания к созданию собственных заданий)"
+          ],
+          sheetLink: "https://docs.google.com/spreadsheets/d/1li2aH7_-ols-ijqdGa4CwwlwOSqmk2CxJPkjophKUh8/edit?gid=235940209#gid=235940209",
+          bottomNote: "Курс построен как смешанный: онлайн-микротеория + офлайн-воркшопы, где менеджеры сразу применяют изученное к реальным вакансиям компании."
+        },
+        { id: 5,
+          title: "📌 Маркетинг: от ЦА до метрик за 14 дней",
+          audience: "👥 <strong>ЦА:</strong> начинающие специалисты 20-30 лет | ⏱️ 14 дней (интенсив)",
+          desc: "💼 <strong>Бизнес-задача:</strong> Дать практические навыки маркетинга — от анализа ЦА до рекламы и метрик → применение знаний сразу в работе и кейсы для портфолио.",
+          features: [
+            "🧩 <strong>Что внутри:</strong>",
+            "Работа над собственным проектом: полный цикл на реальном кейсе",
+            "Короткие видео × 10 мин + ежедневная практика с проверкой экспертов",
+            "Финальная защита: воронка, УТП, медиаплан и метрики"
+          ],
+          result: "📈 <strong>Ожидаемый результат:</strong> формирование портфолио и повышение шансов на трудоустройство (расчётная гипотеза на основе буткемп-формата; согласно исследованиям, это ускоряет выход на рынок, хотя итоговый результат сильно зависит от усилий самого студента).",
+          methodsList: [
+            "Проектирование от результата (каждый шаг ведет к финальному проекту)",
+            "Постепенное усложнение (от знакомства с маркетингом до защиты презентации)",
+            "Геймификация (трекер прогресса, чек-листы)",
+            "Саморефлексия (студент ведет свой проект и видит рост)"
+          ],
+          sheetLink: "https://docs.google.com/spreadsheets/d/1froszWuhb9ZbjrjLN8rDisZxEhi7hYE2h47x_J4nssE/edit?gid=1349150295#gid=1349150295",
+          bottomNote: "Буткемп построен как погружение: студент делает реальный проект под руководством куратора и получает готовый кейс для своего портфолио."
+        }
+      ];
+
+      const filterMap = {
+        sales: [2], service: [3], hr: [4], soft: [1], culture: [0], marketing: [5],
+        blended: [2,3,4], async: [0,1], intensive: [5], interactive: [0,1,3]
+      };
+      let currentActiveFilter = null;
+
+      function renderCases(filteredIds = null) {
+        const container = document.getElementById('cases-grid');
+        if (!container) return;
+        let dataToRender = casesData;
+        if (filteredIds && Array.isArray(filteredIds)) {
+          dataToRender = casesData.filter(c => filteredIds.includes(c.id));
+        }
+        if (dataToRender.length === 0) {
+          container.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:60px;">✨ Нет кейсов под выбранный фильтр. Попробуйте другой ✨</div>`;
+          return;
+        }
+        container.innerHTML = dataToRender.map(c => {
+          if (c.id === 0) {
+            return `
+              <div class="flip-card" data-id="${c.id}">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front esg-front">
+                    <div class="case-title" style="font-size:1.4rem;">${c.title}</div>
+                    <div class="case-audience">${c.audience}</div>
+                    <div class="case-desc" style="margin-bottom:8px;">${c.desc}</div>
+                    <ul class="feature-list" style="margin-top:4px; margin-bottom:8px;">${c.features.map(f => `<li>${f}</li>`).join('')}</ul>
+                    <div class="result-block" style="margin-top:4px;">${c.result}</div>
+                  </div>
+                  <div class="flip-card-back esg-back">
+                    <div class="case-title" style="margin-bottom:12px; font-size:1.1rem;">Ключевые методические приемы:</div>
+                    <ul class="methods-list" style="display:block; margin:6px 0 10px 0;">${c.methodsList.map(m => `<li style="display:block; margin-bottom:5px;">${m}</li>`).join('')}</ul>
+                    <div class="button-group" style="margin:14px 0 12px;">
+                      <a href="${c.sheetLink}" target="_blank" rel="noopener noreferrer" class="small-btn">📄 Полная программа курса</a>
+                      <a href="${c.presLink}" target="_blank" rel="noopener noreferrer" class="small-btn">📊 Презентация проекта</a>
+                    </div>
+                    <div class="quote-block" style="margin-top:14px;">${c.quote}</div>
+                    <div class="back-note" style="margin-top:12px;">${c.bottomNote}</div>
+                  </div>
+                </div>
+              </div>
+            `;
+          } else {
+            return `
+              <div class="flip-card" data-id="${c.id}">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <div class="case-title" style="font-size:1.3rem; margin-bottom:12px;">${c.title}</div>
+                    <div class="case-audience" style="margin-bottom:16px;">${c.audience}</div>
+                    <div class="case-desc" style="margin-bottom:20px;">${c.desc}</div>
+                    <ul class="feature-list" style="margin-top:4px; margin-bottom:20px;">${c.features.map(f => `<li>${f}</li>`).join('')}</ul>
+                    <div class="result-block" style="margin-top:auto; padding-top:12px;">${c.result}</div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="case-title" style="margin-bottom:12px;">🔧 Ключевые методические приемы:</div>
+                    <ul class="methods-list" style="margin-bottom:16px;">${c.methodsList.map(m => `<li>${m}</li>`).join('')}</ul>
+                    <div class="button-group">
+                      <a href="${c.sheetLink}" target="_blank" rel="noopener noreferrer" class="small-btn">📄 Полная программа курса</a>
+                    </div>
+                    <div class="back-note" style="margin-top:12px;">${c.bottomNote}</div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+        }).join('');
+      }
+
+      function setActiveFilter(button, filterType, filterValue) {
+        document.querySelectorAll('.filter-preview-btn').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        currentActiveFilter = { type: filterType, value: filterValue, button: button };
+        renderCases(filterMap[filterValue]);
+      }
+
+      function resetFilter() {
+        if (currentActiveFilter) currentActiveFilter.button.classList.remove('active');
+        currentActiveFilter = null;
+        renderCases();
+      }
+
+      document.querySelectorAll('.filter-preview-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const filterValue = btn.getAttribute('data-filter-value');
+          if (currentActiveFilter && currentActiveFilter.button === btn) resetFilter();
+          else setActiveFilter(btn, btn.getAttribute('data-filter-type'), filterValue);
+        });
+      });
+      renderCases();
+    })();
+
+    const sections = document.querySelectorAll('main section, .hero');
+    const navLinks = document.querySelectorAll('.hero-nav a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollPos = window.scrollY + 200;
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) current = section.getAttribute('id');
+      });
+      if (!current && window.scrollY < 100) current = 'about';
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) link.classList.add('active');
+      });
+    });
+
+    document.querySelectorAll('.voice-facts li').forEach(li => {
+      const html = li.innerHTML;
+      const newHtml = html.replace(/\b(\d+(?:\.\d+)?(?:%|\+)?)\b/g, '<span class="highlight-number">$1</span>');
+      if (newHtml !== html) li.innerHTML = newHtml;
+    });
+    document.querySelectorAll('.bring-list li').forEach(li => {
+      const html = li.innerHTML;
+      const newHtml = html.replace(/\b(\d+(?:\.\d+)?(?:%|\+)?)\b/g, '<span class="highlight-number">$1</span>');
+      if (newHtml !== html) li.innerHTML = newHtml;
+    });
+  </script>
+</body>
+</html>
